@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+<title>Welcome to Vancouver Tourism Plan</title>
+<link rel="stylesheet" href="stylesheets/style.css" type="text/css" media="screen" />
+
+<link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+<script type="text/javascript" src="scripts/jquery.easing.1.3.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="//use.typekit.net/ubj7vak.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#newsletterForm").validate();
+	$('#newsletterForm').submit(submitLetterForm);
+	
+	//$('#FNAME').focus();
+	$('#FNAME').val( "" );
+    $('#EMAIL').val( "" );
+	
+	setTimeout(animate,400);
+	function animate(){
+		 $('#main').stop().delay(0).animate({"opacity":1, "opacity":1}, 1400, 'easeOutQuad');
+
+		 $('#headerLogo').stop().delay(100).animate({"top":0}, 700, 'easeOutBack');
+		 $('#headerLine').stop().delay(200).animate({"width":860}, 1700, 'easeOutExpo');
+		 $('#desc').stop().delay(400).animate({"height":462}, 1200, 'easeInExpo');
+		 $('#signupForm').stop().delay(500).animate({"height":322}, 1600, 'easeInExpo');
+			
+		 precent = 65+'%';	
+		 $('#footer').stop().delay(900).animate({"left":0}, 1400, 'easeOutExpo');
+		 $('#logo').stop().delay(900).animate({"opacity":1, "opacity":1}, 1400, 'easeOutQuad');
+
+	}
+
+
+	
+	function submitLetterForm() {
+	  var letterForm = $(this);
+		$.support.cors = true;
+	  // Are all the fields filled in?
+
+	 if($("#newsletterForm").valid()){
+		// Yes; submit the form to the PHP script via 
+
+		$('#signupForm').stop().delay(0).animate({"height":0}, 1600, 'easeOutExpo');
+		$('#confirm').stop().delay(500).animate({"height":322}, 1600, 'easeInExpo');
+
+	
+		$.ajax( {
+			url: "http://vancouvertourismplan.us6.list-manage.com/subscribe/post?u=483379d6c08cbeb634950e2a2&id=60a3d02c5b",
+			type: "post",
+			data: letterForm.serialize()
+		});
+		
+	  }
+
+	  // Prevent the default form submission occurring
+	  return false;
+	}
+	
+	var randHeader = Math.floor((Math.random()*3)+1);
+  	$('#headerLogo').css("background-image", "url(images/header"+randHeader+".png)");
+	
+}); 
+	
+</script>
+
+<style type="text/css">
+#newsletterForm label.error{ 
+	font-family:'Open Sans',"Helvetica Neue",Helvetica,Arial,Geneva,sans-serif;
+	color: white;
+    float: left;
+    padding-bottom: 0;
+    position: relative;
+    text-align: center;
+    width: 291px;
+    font-size: 12px;
+    margin-bottom: -15px;
+    }
+</style>
+
+</head>
+<body>
+
+<div id='main'>
+	<div id='holder'>
+		<div id='header'>
+			<div id='headerLogo'></div>
+			<div id='headerLine'><img alt='Link' border='0' src='images/headerLine.png' /></div>
+		</div>
+		<div id="confirm">
+			<h2>ALMOST FINISHED...</h2>
+			<p>We need to confirm your email address. To complete the subscription process, please click the link in the email we just sent you.</p>
+		</div>
+		<div id="signupForm">
+			<form action="" method="post" class="form" id="newsletterForm" name="newsletterForm" class="validate" target="">
+			<h2>SUBSCRIBE</h2>
+			<p>Want updates? Just enter your name and email address and we'll email you every time we publish a new article.</p>
+			
+			<h3>NAME</h3>
+			<input type="text" value="" name="FNAME" placeholder="" required="required" class="" id="FNAME">
+
+			<h3>EMAIL</h3>
+			<input type="email" value="" name="EMAIL" placeholder="" required="required" class="required email" id="EMAIL">
+			<div id='submitBtn'><input type="submit" value="SUBMIT" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+			</form>
+		</div>
+		<div id='desc'>
+			<p>The Vancouver Tourism Master Plan is a joint effort of the City of Vancouver, Tourism Vancouver, Vancouver Economic Commission and the Vancouver Convention Centre to assess and define the product development needs of Vancouver's tourist attractions, services, facilities and transportation in order to create a long term strategy for the sustainable development and management of tourism in the city.</p>
+			<p>Creating Vancouver’s Tourism Master Plan will involve engaging stakeholders from industry, business improvement associations and residents of Vancouver neighbourhoods through interviews, workshops and on-line surveys. Our goal is to help everyone articulate and share a clear vision for the future of tourism in Vancouver – because when people share a vision of the future, it gives them shared belief, shared purpose and shared passion.</p>
+			<p>This process will help identify, innovate, create and articulate unique products, amenities, programming and experiences, along with the policies and protocols required to guide the long-term planning and design of Vancouver – and its many neighbourhoods – as world-beating tourism destinations.</p>
+			<p>To learn more about the process and receive email updates, please subscribe.</p>
+		</div>		
+	</div>
+	<div id='footer'><div id='footerLinks'><a href='http://www.tourismvancouver.com/privacy/' target='_blank' val=">Privacy Policy">Privacy Policy</a> | <a href='http://www.tourismvancouver.com/web-site-use/' target='_blank' val="Web Site Use">Web Site Use</a> | <a href='http://www.tourismvancouver.com/about-us/contact/' target='_blank' val="Contact">Contact</a> </div> <span>Copyright 2012 the Greater Vancouver Visitors and Convention Bureau, All Rights Reserved.</span></div>
+	<div id='logo'><a href='http://www.tourismvancouver.com' target='_blank' title=">Vancouver Tourism"><img alt='Vancouver Tourism' border='0' src='images/logo.png' /></a></div>
+</div>
+<!--[if lt IE 9]>
+<div id="ie-message">
+       <p>This site has been optimised for use with the following browsers: Safari, Chrome, Firefox and Internet Explorer 9 or higher.</br> Your experience may be less than ideal if you're using other browsers or versions.</p>
+ </div>
+<![endif]-->
+</body>
+</html>

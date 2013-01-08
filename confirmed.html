@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+<title>Thank you - Vancouver Tourism Plan</title>
+<link rel="stylesheet" href="stylesheets/style.css" type="text/css" media="screen" />
+
+<link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+<script type="text/javascript" src="scripts/jquery.easing.1.3.js"></script>
+
+<script type="text/javascript" src="//use.typekit.net/ubj7vak.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	setTimeout(animate,400);
+	function animate(){
+		 $('#main').stop().delay(0).animate({"opacity":1, "opacity":1}, 1400, 'easeOutQuad');
+
+		 $('#headerLogo').stop().delay(100).animate({"top":0}, 700, 'easeOutBack');
+		 $('#headerLine').stop().delay(200).animate({"width":860}, 1700, 'easeOutExpo');
+		 $('#thankyou').stop().delay(400).animate({"height":165}, 1200, 'easeInExpo');
+			
+		 $('#footer').stop().delay(900).animate({"left":0}, 1400, 'easeOutExpo');
+		 $('#logo').stop().delay(900).animate({"opacity":1, "opacity":1}, 1400, 'easeOutQuad');
+
+	}
+
+	var randHeader = Math.floor((Math.random()*3)+1);
+  	$('#headerLogo').css("background-image", "url(images/header"+randHeader+".png)");
+	
+}); 
+	
+</script>
+
+<style type="text/css">
+	#holder{
+		top:50%;
+		height:208px;
+		margin: -123px -430px;
+		
+		}
+</style>
+
+</head>
+<body>
+
+<div id='main'>
+	<div id='holder'>
+		<div id='header'>
+			<div id='headerLogo'></div>
+			<div id='headerLine'><img alt='Link' border='0' src='images/headerLine.png' /></div>
+		</div>
+		
+		<div id='thankyou'>
+			<h2>Thanks for your confirmation.</h2>
+			<p>We look forward to keeping you up to date on the Tourism Master Plan.</p>
+			<p>You'll receive notification by email when the blog is live and then when new posts are added.</p>
+		</div>
+		
+		
+	</div>
+	<div id='footer'><div id='footerLinks'><a href='http://www.tourismvancouver.com/privacy/' target='_blank' val=">Privacy Policy">Privacy Policy</a> | <a href='http://www.tourismvancouver.com/web-site-use/' target='_blank' val="Web Site Use">Web Site Use</a> | <a href='http://www.tourismvancouver.com/about-us/contact/' target='_blank' val="Contact">Contact</a> </div> <span>Copyright 2012 the Greater Vancouver Visitors and Convention Bureau, All Rights Reserved.</span></div>
+	<div id='logo'><a href='http://www.tourismvancouver.com' target='_blank' title=">Vancouver Tourism"><img alt='Vancouver Tourism' border='0' src='images/logo.png' /></a></div>
+</div>
+<!--[if lt IE 9]>
+ <div id="ie-message">
+       <p>This site has been optimised for use with the following browsers: Safari, Chrome, Firefox and Internet Explorer 9 or higher.</br> Your experience may be less than ideal if you're using other browsers or versions.</p>
+ </div>
+<![endif]-->
+</body>
+</html>
